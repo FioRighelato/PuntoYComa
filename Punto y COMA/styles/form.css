@@ -1,0 +1,73 @@
+form{
+    margin: 40px 50px 60px 0px;
+    padding-left: 5rem;
+}
+
+form label, form legend{
+    display: block;
+    font-size: 20px;
+    margin: 30px 0px 10px 20px;
+    font-family: "red hat display";
+    font-weight: 600;
+    font-size: 18px;
+    color: #423131;
+}
+ 
+
+.inputpadron{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 60%;
+    border-radius: 10px;
+    border: none;
+    background: #f5f5f593;
+    font-family: "red hat display";
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.checkbox-square{
+    cursor: pointer;
+    background-color: none;
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    border: 1px solid #4231319f;
+    border-radius: 5.5px;
+    margin: 0px 14px 0px 0px;
+}
+
+.checkbox-square:checked {
+    background-color: #423131;
+  }
+
+.checkbox{
+    color: #423131;
+    font-size: 16px;
+    margin: 10px 40px 12px 20px;
+    font-family: "red hat display";
+    font-weight: 600;
+    
+}
+
+.send{
+    width:7em;
+    height: 3.5em;
+    margin: 20px 0px 0px 18rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f5f5f5cc;
+    background: rgb(121, 9, 9);
+    border: none;
+    transition: 0.5s all;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+
+.send:hover{
+    background: rgb(121, 9, 9);
+    transform: scale(1.1);
+}

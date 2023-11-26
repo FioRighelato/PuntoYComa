@@ -1,0 +1,38 @@
+.banner-postulate{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid grgba(128, 128, 128, 0.548);
+}
+
+#form-applicant{
+    margin: 40px;
+    font-family: "Red Hat Display";
+    color: var(--black-color);
+    margin-bottom: 100px;
+
+}
+
+.tittle-applicant{
+    font-size: 30px;
+}
+
+.text-1-A{
+    font-size: 20px;
+}
+
+.text-2-A{
+    font-size: 15px;
+}
+
+
+.pdf-input{
+    margin: 5px;
+    
+}
+
+#send-applicant{
+    position: relative;
+    top: 5rem;
+    right: 20rem;
+}

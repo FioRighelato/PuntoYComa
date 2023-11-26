@@ -1,0 +1,10 @@
+.title-contact{
+    font-family: "Red Hat Display";
+    font-size: 25px;
+    text-align: left;
+    margin: 40px;
+    font-weight: 600;
+    color: var(--black-color);
+}
+
+

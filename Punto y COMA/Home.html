@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Punto y Coma</title>
+</head>
+
+<body>
+    <header>
+        <h1><img src="assets/punto y coma/logo-entero.png" alt="Logo de Punto y Coma" ></h1>
+        <nav>
+            <ul>
+                <li class="menu"><a href="Home.html">Home</a></li>
+                <li class="menu"><a href="contacto.html">Contacto</a></li>
+                <li class="menu"><a href="postulacion.html">Postulate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="slide-contenedor">
+            <div class="miSlider fade">
+                <img src="assets/portada1-ver2.png" alt="">
+            </div>
+            <div class="miSlider fade">
+                <img src="assets/Banner-2.png" alt="">
+            </div>
+            <div class="miSlider fade">
+                <video id="slider" autoplay muted loop>
+                    <source src="assets/Los postres más dulces los comes acá.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="direcciones">
+                <a href="javascript:void(0)" class="atras" onclick="avanzaSlide(-1)">&#10094;</a>
+                <a href="javascript:void(0)" class="adelante" onclick="avanzaSlide(1)">&#10095;</a>
+
+            </div>
+            <div class="barras">
+                <span class="barra active" onclick="posicionSlide(1)"></span>
+                <span class="barra" onclick="posicionSlide(2)"></span>
+                <span class="barra" onclick="posicionSlide(3)"></span>
+                <a href="javascript:void(0)" class="pausa" onclick="pausar()"><img src="assets/icons/icons8-pausa-30.png" alt="Pausa" class="icono-carrusel"></a>
+                <span class="reanudar" onclick="reanudar()"><img src="assets/icons/icons8-reanudar-64.png" alt="Reanudar" class="icono-carrusel"></a>
+            </div>
+        </div>
+    
+        <div class="container-map">
+
+            <section class="section-map">
+                <h3 class="title-map"> <u>Nuestra Ubicación</u></h3>
+                <p class="parraf-mapa">Estamos ubicados en la esquina de Pellegrini y Av. Corrientes, frente al obelisco. <br><br>Lunes a Sábado abierto las <strong>24 horas.</strong> Domingos cerrados.</p>
+                <iframe class="mapita" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22740.331830732215!2d-58.390982583699476!3d-34.600672117893275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses!2sar!4v1700691451147!5m2!1ses!2sar" width="700" height="290" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                
+                
+            </section>
+
+        </div>
+
+
+        <div class="container-history">
+            <h2 class="title-history"> <u>Nuestra historia</u></h2>
+            <p class="section-history">En el año 2014, nació <FONT COLOR="#A61111">Punto y Coma</FONT>, una hamburguesería que 
+                    fusiona el auténtico estilo americano con el inconfundible toque 
+                    de la parrilla argentina.<br><br>
+                            
+                    En <FONT COLOR="#A61111" >Punto y Coma</FONT>, no solo ofrecemos hamburguesas, sino 
+                    una experiencia gastronómica única.  Nuestro menú variado 
+                    va más allá de lo convencional, con opciones clásicas y creativas,
+                    todas elaboradas con ingredientes frescos y de alta calidad.<br><br> 
+                            
+                    Con una estética que evoca las clásicas cafeterías americanas, te 
+                    invitamos a tomar un break en tu día.<br><br>
+                            
+                    En <FONT COLOR="#A61111" >Punto y Coma</FONT>, no solo alimentamos tu cuerpo, sino también tu
+                    alma. Descubre el sabor que nos ha convertido en un referente y disfruta de la pausa que te mereces.<br> 
+                    <br>
+                    ¡Bienvenido a <FONT COLOR="#A61111" style="font-weight: bold;">Punto y Coma</FONT>, donde cada bocado es una experiencia!<br></p>
+            <img src="assets/img-hambur.jpg" alt="Persona sosteniendo una hamburguesa entre las dos manos" class="img-historia">
+        </div>
+
+        
+       
+    </main>
+
+    <script>
+        let indice = 1;
+        let pausado = false;
+        let intervalo;
+
+        muestraSlides(indice);
+
+        function avanzaSlide(n) {
+            muestraSlides(indice += n);
+            event.preventDefault();
+        }
+
+        function posicionSlide(n) {
+            muestraSlides(indice = n);
+            event.preventDefault();
+        }
+
+        function pausar() {
+            pausado = true;
+            clearInterval(intervalo);
+            event.preventDefault();
+        }
+
+        function reanudar() {
+            pausado = false;
+            intervalo = setInterval(function () {
+                muestraSlides((indice += 1));
+            }, 4000);
+            event.preventDefault();
+        }
+
+        setInterval(function tiempo() {
+            if (!pausado) {
+                muestraSlides(indice += 1);
+            }
+        }, 4000);
+
+        function muestraSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName('miSlider');
+            let barras = document.getElementsByClassName('barra');
+
+            if (n > slides.length) {
+                indice = 1;
+            }
+            if (n < 1) {
+                indice = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            for (i = 0; i < barras.length; i++) {
+                barras[i].className = barras[i].className.replace(" active", "");
+            }
+
+            slides[indice - 1].style.display = 'block';
+            barras[indice - 1].className += ' active';
+        }
+  
+    </script>
+    
+
+    
+    <footer>
+        <p>Desarrollado por: Righelato Fiorella <br><br> Contacto: r.fiorella468@gmail.com</p>
+
+    </footer>
+
+</body>
+</html>

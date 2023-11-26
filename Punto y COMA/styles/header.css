@@ -1,0 +1,54 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1px;
+    font-family: 'Red Hat Display';
+    background-color: rgba(172, 164, 164, 0.384);
+    border-bottom: .5px solid rgba(136, 113, 113, 0.267);
+}
+
+header img {
+    margin: 2rem;
+    height: 2.5em;
+    width: 5em;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-inline-end: 40em;
+}
+
+nav li {
+    margin-right: 5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffff;
+    transition: all;
+    transition-duration: 300ms;
+    font-size: 18px;
+    font-weight: 450;
+    padding: 10px;
+}
+
+.menu{
+    padding: 8px 0;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+.menu:hover {
+    cursor: pointer;
+    background: #4d2c2c;
+    border-radius: 1.5rem;
+    border: none;
+}
+
+

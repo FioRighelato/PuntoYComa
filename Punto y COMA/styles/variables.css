@@ -1,0 +1,13 @@
+:root{
+    --black-color: #1b0606;
+    --bronw-color: #423131;
+}
+
+main{
+    font-family: 'Red Hat Display', sans-serif;
+    overflow: hidden;
+}
+
+.text-serif{
+    font-family: 'DM Serif Display', serif;
+}
